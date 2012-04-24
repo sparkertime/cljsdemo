@@ -4,15 +4,15 @@
 (defn on-load [f]
   (.load ($ js/window) f))
 
-(defn on-user-input [f scope]
+(defn on-user-input [f]
   (-> ($ :#chatbox)
-    (.on (str "submit." scope)
+    (.on "submit.chat"
       (fn [e] (.preventDefault e)
               (f (value :#message))))))
 
-(defn on-user-register [f scope]
+(defn on-user-register [f]
   (-> ($ :#registration)
-    (.on (str "submit." scope)
+    (.on "submit.register"
       (fn [e] (.preventDefault e)
               (.hide ($ :#registration))
               (f (value :#handle) (value :#email))))))

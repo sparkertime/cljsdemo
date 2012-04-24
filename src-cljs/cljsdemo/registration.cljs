@@ -7,4 +7,4 @@
   [handle email]
   (sockets/send :registered {:name handle :email email}))
 
-(utils/on-user-register register! "registerer")
+(utils/on-user-register register!)
