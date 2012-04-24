@@ -58,7 +58,7 @@
 (defn -main []
   (aleph/start-http-server
     (var connection-router)
-    {:port 8008 :websocket true})
+    {:port 8080 :websocket true})
   (aleph/start-http-server
     static-file-server
-    {:port 8016}))
+    {:port 8888}))
