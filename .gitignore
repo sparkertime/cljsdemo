@@ -1,0 +1,10 @@
+pom.xml
+*jar
+/lib/
+/classes/
+/.clojurescript-output/
+/resources/public/js/main.js
+.lein-failures
+.lein-deps-sum
+.repl
+/.lein-plugins/
