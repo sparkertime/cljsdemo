@@ -61,4 +61,4 @@
     {:port 8080 :websocket true})
   (aleph/start-http-server
     static-file-server
-    {:port 8888}))
+    {:port 80}))
