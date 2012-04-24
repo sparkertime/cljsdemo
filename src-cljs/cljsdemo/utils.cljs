@@ -8,7 +8,8 @@
   (-> ($ :#chatbox)
     (.on "submit.chat"
       (fn [e] (.preventDefault e)
-              (f (value :#message))))))
+              (f (value :#message))
+              (clear-user-input)))))
 
 (defn on-user-register [f]
   (-> ($ :#registration)
@@ -17,7 +18,7 @@
               (.hide ($ :#registration))
               (f (value :#handle) (value :#email))))))
 
-(defn clear-user-input [f]
+(defn clear-user-input []
   (-> ($ :#message)
     (.val "")))
 
