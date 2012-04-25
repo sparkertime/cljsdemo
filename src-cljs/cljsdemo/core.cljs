@@ -3,4 +3,9 @@
   (:require [cljsdemo.utils :as utils]
             [cljsdemo.sockets :as sockets]))
 
-(utils/on-user-input (fn [msg] (.log js/console msg)))
+(utils/on-user-input (fn [msg] (sockets/send :chat "hello")))
+
+(sockets/on-message-received
+  (fn [msg]
+    (.log js/console (:payload msg))
+    (utils/append-msg-to (:payload msg) :#chatlog)))
