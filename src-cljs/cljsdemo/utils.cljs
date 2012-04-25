@@ -34,7 +34,7 @@
   (let [el ($ id)
         obj (.get el 0)]
     (-> el
-      (.append msg))
+      (.append (str msg "<br />")))
     (set! (.-scrollTop obj) (.-scrollHeight obj))))
 
 (defn value [id]
